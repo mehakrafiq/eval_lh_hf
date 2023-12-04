@@ -292,10 +292,10 @@ def sliding_windows_variable(data, seq_length, offset):
 
     return np.array(x)    
         
-def compute_sampling_rate(data):
+def compute_sampling_rate(data): #sampling rate computed for each row separately
     samples = data.samples
     duration = data.duration
-    fs = samples/duration
+    fs = samples/duration #samples divided by duration so less the samples in the same duration rate changes 
     data['fs'] =  fs
     return
 
